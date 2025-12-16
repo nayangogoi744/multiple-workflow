@@ -15,3 +15,5 @@ jobs:
           echo "Issue body: ${{ github.event.issue.body }}"
           echo "Issue author: ${{ github.event.issue.user.login }}"
           echo "Repository: ${{ github.repository }}"
+      - name: Output event details
+        run: echo "${{ github.event }}"
