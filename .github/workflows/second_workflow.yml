@@ -16,4 +16,4 @@ jobs:
           echo "Issue author: ${{ github.event.issue.user.login }}"
           echo "Repository: ${{ github.repository }}"
       - name: Output event details
-        run: echo "${{ github.event }}"
+        run: echo "${{ toJSON(github.event) }}"
