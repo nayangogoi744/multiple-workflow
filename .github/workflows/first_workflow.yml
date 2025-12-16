@@ -1,5 +1,5 @@
 name: CI/CD workflow
-on: [push,workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -12,10 +12,6 @@ jobs:
           node-version: 20
       - name: Install Dependencies
         run: npm ci
-  second-job:
-    needs: first-job
-    runs-on: ubuntu-latest
-    steps:
       - name: Run lint
         run: npm run lint
       - name: Run tests
