@@ -1,0 +1,17 @@
+name: Trigger with issues and get details
+on:
+  issues:
+    types: [opened,edited,closed]
+jobs:
+  issue-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print issue details
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Action: ${{ github.event.action }}"
+          echo "Issue number: ${{ github.event.issue.number }}"
+          echo "Issue title: ${{ github.event.issue.title }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
+          echo "Issue author: ${{ github.event.issue.user.login }}"
+          echo "Repository: ${{ github.repository }}"
